@@ -3,10 +3,10 @@
 <head>
     <meta charset="utf-8" />
     <title>Learning AngularJS</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
 </head>
-
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-
 
 
 <body>
@@ -17,34 +17,90 @@
     <!--"ng-app": defines as an AngularJS app-->
     <!--"ng-model": binds controls to application data-->
     <!--"ng-bind": binds to HTML view-->
-    <div ng-app="">
-        <p>
-            Input something into the input box:
-        </p>
-        <p>
-            Name: <input type="text" ng-model="name">
-        </p>
-        <p ng-bind="name"> </p>
+    <div class="extendHTML">
+        <div ng-app="">
+            <p>
+                Input something into the input box:
+            </p>
+            <p>
+                Name: <input type="text" ng-model="name">
+            </p>
+            <p ng-bind="name"> </p>
+        </div>
     </div>
+    
     <!--end Extends HTML-->
     <p>***********************</p>
-    <!--Directives-->
+    <!--Directives Intro-->
     <!--"data-ng": makes page HTML valid-->
     <!--"data-ng-init": initializes variables-->
-    <div ng-app=""  ng-init="firstName='John'">
-        <p>
-            The name is <span ng-bind="firstName"></span>
-        </p>
+    <div class="directives">
+        <div ng-app="" ng-init="firstName='John'">
+            <p>
+                The name is <span ng-bind="firstName"></span>
+            </p>
+        </div>
     </div>
     <!--end Directives-->
     <p>***********************</p>
-    <!--Expressions-->
+    <!--Expressions Intro-->
     <!-- writen with double braces "{{experession}}"-->
-    <div data-np-app="">
-        <p>My first expression: {{ 5 + 5 }}</p>
+    <div class="expressions">
+        <div np-app="">
+            <p>
+                My first expression: {{ 5 + 5 }}
+            </p>
+        </div>
+
+        <div ng-app="">
+            <p>
+                Input something into the input box:
+            </p>
+            <p>
+                Name: <input type="text" ng-model="name" />
+            </p>
+            <p>
+                {{name}}
+            </p>
+        </div>
     </div>
+
+
     <!--end Expression-->
     <p>**********************</p>
+    <!--Applications Intro-->
+    <div class="applications">
+        <p>
+            Try to change the names.
+        </p>
+        <div ng-app="myApp" ng-controller="myCtrl">
+            First Name: <input type="text" ng-model="firstName" /><br />
+            Last Name: <input type="text" ng-model="lastName" /><br />
+            <br />
+            Full Name: {{firstName + " " + lastName}}
+        </div>
+    </div>
+    <!--end Applications intro-->
+    <!--end Angular Intro-->
+
+    <p>**************************</p>
+
+
+
+
+
+
+
+
+    <!--Intro Scripts-->
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function ($scope) {
+            $scope.firstName = "John";
+            $scope.lastName = "Doe";
+        });
+    </script>
+
 
    
 
